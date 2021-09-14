@@ -8,6 +8,7 @@ export const HamburgerMenuContainer = styled.div`
     flex: 0.1;
     align-items: center;
     position: relative;
+    top: 0;
     background: #000;
     height: 54px;
   }
@@ -42,5 +43,4 @@ export const SongName = styled.div`
   color: #f9f9f9;
   position: relative;
   left: 11px;
-  
 `;
