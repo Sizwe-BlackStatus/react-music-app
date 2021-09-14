@@ -70,7 +70,7 @@ function Controls({
         </ShuffleRepeatBox>
       </ControlsContainer>
       <LcdToggle className="LcdToggle">
-        {/* <SearchPlaylistButton playlistToggle={playlistToggle} playlistOpen={playlistOpen}/> */}
+        <SearchPlaylistButton playlistToggle={playlistToggle} playlistOpen={playlistOpen}/>
         <ToggleComponent toggle={toggle} />
       </LcdToggle>
     </Lcd>

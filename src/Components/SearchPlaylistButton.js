@@ -14,6 +14,10 @@ export const PlaylistToggleBox = styled.div`
     left: 0;
     width: 27px;
   }
+
+  @media screen and (max-width: 560px) {
+      display: none;
+  }
 `;
 
 export const PlaylistToggle = styled(CgPlayList)`
