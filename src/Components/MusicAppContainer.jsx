@@ -29,7 +29,7 @@ function MusicAppContainer() {
   }
 
   function handlePlaylist() {
-    if (typeOfPlaylist !== "songs" && "") {
+    if (typeOfPlaylist !== "songs" || "") {
       setPlayliss(playlist);
     } else {
       setPlayliss(musicDb);
@@ -77,6 +77,7 @@ function MusicAppContainer() {
           searchPlaylist={searchPlaylist}
           playlistToggle={playlistToggle}
           playlistOpen={playlistOpen}
+          playliss={playliss}
         />
         <MusicPlayer
           toggle={toggle}
