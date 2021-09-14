@@ -25,6 +25,11 @@ export const ImgContainer = styled.div`
   width: 100%;
   margin: 0 auto;
   height: 54px;
+  :hover {
+    background: #141725;
+    border-radius: 3px;
+    border: 1px solid #2c2c2c;
+  }
 `;
 
 export const Img = styled.img`
@@ -37,4 +42,5 @@ export const SongName = styled.div`
   color: #f9f9f9;
   position: relative;
   left: 11px;
+  
 `;

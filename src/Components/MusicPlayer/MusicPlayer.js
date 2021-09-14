@@ -17,7 +17,7 @@ export const SongScreenContainer = styled.div`
 
   @media screen and (max-width: 560px) {
     position: absolute;
-    bottom: ${({ music }) => (typeof music === 'object' ? "0px" : "-180px")};
+    bottom: ${({ music }) => (typeof music === "object" ? "0px" : "-180px")};
     width: 100%;
     z-index: 10;
   }
@@ -170,7 +170,6 @@ export const VolumeSlider = styled.input`
   top: 7px;
   width: 70px;
   height: 3px;
-  
 `;
 
 export const UpcomingSongs = styled.div`
@@ -180,6 +179,7 @@ export const UpcomingSongs = styled.div`
   height: 22px;
   text-align: center;
 `;
+
 export const UpcomingSongsBtn = styled.button`
   padding: 2px;
   width: 7%;
@@ -187,6 +187,7 @@ export const UpcomingSongsBtn = styled.button`
   border: none;
   background: none;
 `;
+
 export const UpcomingSongsIcon = styled(IoMenuOutline)`
   font-size: 22px;
   opacity: 0.5;
@@ -201,11 +202,4 @@ export const LcdToggle = styled.div`
     top: -3px;
     margin-right: 10px;
   }
-`;
-
-export const Audio = styled.audio``
-
-export const Push = styled.p`
-  color: #000;
-  font-size: 20px;
 `;

@@ -1,8 +1,7 @@
 import styled from "styled-components";
-// import { IoShuffleOutline, IoRepeat } from "react-icons/io5";
 import { HiRewind, HiFastForward } from "react-icons/hi";
 import { FaPlay, FaPause } from "react-icons/fa";
-import {MdRepeat, MdRepeatOne, MdShuffle} from 'react-icons/md'
+import { MdRepeat, MdRepeatOne, MdShuffle } from "react-icons/md";
 
 export const Lcd = styled.div`
   display: flex;
@@ -114,11 +113,11 @@ export const ShuffleRepeatBox = styled.div`
 export const LcdToggle = styled.div`
   display: none;
   @media screen and (max-width: 1000px) {
-    display: block;
+    display: flex;
     flex: 0.1;
     position: relative;
     top: -3px;
-    margin-right: 10px;
+    margin-right: 5px;
   }
 `;
 export const Audio = styled.audio``;
@@ -134,3 +133,4 @@ export const SongImg = styled.img`
   width: 100%;
   object-fit: contain;
 `;
+

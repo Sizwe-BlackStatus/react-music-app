@@ -3,7 +3,7 @@ import {CgMiniPlayer} from "react-icons/cg"
 
 export const ToggleContainer = styled.div`
   position: relative;
-  left: 24%;
+  left: 14%;
   top: 12px;
   width: 7%;
   height: 25px;

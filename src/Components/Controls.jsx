@@ -14,10 +14,14 @@ import {
   ShuffleRepeatBox,
   LcdToggle,
 } from "./Controls";
+import {
+  PlaylistToggleBox,
+  PlaylistToggle,
+} from "./MusicPlayer/MusicPlayer.js";
+import SearchPlaylistButton from "./SearchPlaylistButton.jsx";
 import ToggleComponent from "./Toggle.jsx";
 
 function Controls({
-  open,
   toggle,
   skipTrack,
   setIsPlaying,
@@ -29,27 +33,35 @@ function Controls({
   audioEl,
   currTrack,
   setPlaylist,
+  playlistToggle,
+  playlistOpen
 }) {
   return (
-    <Lcd className="lcd" open={open} toggle={toggle}>
+    <Lcd className="lcd" toggle={toggle}>
       <ControlsContainer className="controlscontainer">
         <ShuffleRepeatBox className="shufflerepeatbox" onClick={shuffleTrack}>
           <ShuffleIcon />
         </ShuffleRepeatBox>
         <PlaybackControlsContainer className="playbackControlsContainer">
-          <PlaybackButton className="playbackButton" onClick={previousTrack}>
-            <RewindIcon />
-          </PlaybackButton>
-          <audio ref={audioEl} src={currTrack.src}></audio>
           <PlaybackButton
+            className="playbackButton"
             onClick={() => {
-              setIsPlaying(!isPlaying);
+              previousTrack();
               setPlaylist();
             }}
           >
+            <RewindIcon />
+          </PlaybackButton>
+          <audio ref={audioEl} src={currTrack.src}></audio>
+          <PlaybackButton onClick={() => setIsPlaying(!isPlaying)}>
             {isPlaying ? <PlayIcon /> : <PauseIcon />}
           </PlaybackButton>
-          <PlaybackButton onClick={skipTrack}>
+          <PlaybackButton
+            onClick={() => {
+              skipTrack();
+              setPlaylist();
+            }}
+          >
             <FastForward />
           </PlaybackButton>
         </PlaybackControlsContainer>
@@ -58,7 +70,8 @@ function Controls({
         </ShuffleRepeatBox>
       </ControlsContainer>
       <LcdToggle className="LcdToggle">
-        <ToggleComponent open={open} toggle={toggle} />
+        {/* <SearchPlaylistButton playlistToggle={playlistToggle} playlistOpen={playlistOpen}/> */}
+        <ToggleComponent toggle={toggle} />
       </LcdToggle>
     </Lcd>
   );

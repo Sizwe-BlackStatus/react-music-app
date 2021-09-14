@@ -1,24 +1,15 @@
-import React, { useState, useEffect, useRef } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React from "react";
 import { SongListContainer, SongPage } from "./SongList.js";
 import SongC from "./SongCard.jsx";
-import { setPlaylist } from "../Components/actions/actions";
+import musicDb from "../musicDb.js";
 
-function SongsList({ music }) {
-  const { playlists } = useSelector((state) => state.musicReducer);
-  const { path } = useSelector((state) => state.musicReducer);
-  // const dispatch = useDispatch();
-  // function setGenrePlaylist() {
-  //   dispatch(setPlaylist(playlists));
-  // }
- 
-
+function SongsList({ music, handlePlaylist}) {
   return (
-    <SongPage className="bb" music={music} >
-      <SongListContainer>
-        {console.log(playlists)}
-        {playlists.map((song, id) => {
-          return <SongC key={song.id} music={song} />;
+    <SongPage music={music} >
+      <SongListContainer >
+        {musicDb.map((song, id) => {
+          song.id = id
+          return <SongC key={id} music={song} handlePlaylist={handlePlaylist}/>;
         })}
       </SongListContainer>
     </SongPage>

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
 
 import {
   SongScreenContainer,
@@ -11,7 +11,6 @@ import {SongName} from "./SongCard.js"
 function SongScreen({ open, music, toggle }) {
   return (
     <SongScreenContainer open={open} className="SongScreen" toggle={toggle} music={music}>
-      {console.log(music)}
       <SongImgContainer>
         <SongImg
           src={music.image}

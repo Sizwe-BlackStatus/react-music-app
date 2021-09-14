@@ -11,8 +11,9 @@ import {
   SpeakerOffIcon,
 } from "./MusicPlayer.js";
 
-import { useDispatch, useSelector } from "react-redux";
-import { setCurrentPlaying, setPlaylist } from "../actions/actions.js";
+import { useDispatch } from "react-redux";
+import { setCurrentPlaying } from "../actions/actions.js";
+import SearchPlaylistButton from "../SearchPlaylistButton.jsx";
 
 const useStyles = makeStyles({
   volumeSlider: {
@@ -22,13 +23,12 @@ const useStyles = makeStyles({
 });
 
 function MusicPlayer({
-  open,
   toggle,
+  playlistToggle,
   music,
-  skipTrack,
-  previousTrack,
-  repeatTrack,
-  shuffleTrack,
+  handlePlaylist,
+  playliss,
+  playlistOpen
 }) {
   const classes = useStyles();
   const [currTrack, setCurrTrack] = useState(music);
@@ -39,16 +39,15 @@ function MusicPlayer({
   const [shuffle, setShuffle] = useState(false);
   const audioEl = useRef(null);
   const dispatch = useDispatch();
-  const { playlists } = useSelector((state) => state.musicReducer);
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
 
-  const handleVolumeChange = (event, newValue) => {
+  function handleVolumeChange(event, newValue) {
     setVolume(newValue);
-  };
+  }
 
-  const handleMute = () => {
+  function handleMute() {
     setMute(!mute);
-  };
+  }
 
   function repeatTrack() {
     setRepeat(!repeat);
@@ -56,24 +55,24 @@ function MusicPlayer({
   function shuffleTrack() {
     setShuffle(!shuffle);
     if (!shuffle) {
-      playlists.sort(() => Math.random() - 0.5);
+      playliss.sort(() => Math.random() - 0.5);
     }
   }
 
   function skipTrack() {
     let currentTrackId = currTrack.id + 1;
-    if (currentTrackId > playlists.length - 1) {
+    if (currentTrackId > playliss.length - 1) {
       currentTrackId = 0;
     }
-    dispatch(setCurrentPlaying(playlists[currentTrackId]));
+    dispatch(setCurrentPlaying(playliss[currentTrackId]));
   }
 
   function previousTrack() {
     let currentTrackId = currTrack.id - 1;
     if (currentTrackId < 0) {
-      currentTrackId = playlists.length - 1;
+      currentTrackId = playliss.length - 1;
     }
-    dispatch(setCurrentPlaying(playlists[currentTrackId]));
+    dispatch(setCurrentPlaying(playliss[currentTrackId]));
   }
 
   useEffect(() => {
@@ -100,7 +99,6 @@ function MusicPlayer({
   return (
     <SongScreenContainer className="SongScreenContainer" music={music}>
       <Controls
-        open={open}
         toggle={toggle}
         currTrack={currTrack}
         isPlaying={isPlaying}
@@ -113,7 +111,9 @@ function MusicPlayer({
         repeatTrack={repeatTrack}
         shuffleTrack={shuffleTrack}
         audioEl={audioEl}
-        setPlaylist={setPlaylist}
+        setPlaylist={handlePlaylist}
+        playlistToggle={playlistToggle}
+        playlistOpen={playlistOpen}
       />
       <VolumeContainer className="volumeContainer">
         <VolumeLcd className="volumeLcd">
@@ -129,7 +129,8 @@ function MusicPlayer({
             onChange={handleVolumeChange}
           ></Slider>
         </VolumeLcd>
-        <ToggleComponent open={open} toggle={toggle} />
+        <SearchPlaylistButton playlistToggle={playlistToggle}/>
+        <ToggleComponent toggle={toggle} />
       </VolumeContainer>
     </SongScreenContainer>
   );

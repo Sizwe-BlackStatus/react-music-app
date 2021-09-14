@@ -10,7 +10,6 @@ export const SongScreenContainer = styled.div`
   position: fixed;
   z-index: 999;
   @media screen and (max-width: 560px) {
-    // display: ${({music}) => (typeof music === 'object' ? 'flex' : 'none')};
     flex: 0.1;
     align-items: center;
     position: relative;

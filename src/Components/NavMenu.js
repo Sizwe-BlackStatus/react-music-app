@@ -6,7 +6,6 @@ import { IoRadio, IoAlbumsOutline } from "react-icons/io5";
 import { WiTime9 } from "react-icons/wi";
 import { GiMicrophone } from "react-icons/gi";
 import { MdPlaylistPlay } from "react-icons/md";
-import { Link } from "react-router-dom";
 
 export const MenuNav = styled.nav`
   display: flex;
@@ -33,6 +32,11 @@ export const InpuContainer = styled.div`
   border: 1px solid #e5e5e5;
   border-radius: 2px;
   background: #fff;
+  @media screen and (max-width: 560px){
+    position: absolute;
+    bottom: 100px;
+    margin-left: 36px;
+  }
 `;
 
 export const SearchBox = styled.div`
@@ -43,7 +47,7 @@ export const Input = styled.input`
   outline: none;
   position: relative;
   top: -2px;
-  width: 41%;
+  width: 81%;
   opacity: 0.5;
 `;
 
@@ -100,8 +104,6 @@ export const NavItem = styled.li`
   padding: 4px;
   text-align: left;
   line-height: 22px;
-  // position: relative;
-    // top: -4px;
   a:link {
     display: flex;
     text-decoration: none;
@@ -204,41 +206,3 @@ export const SideNavIconHeading = styled.p`
     font-size: 20px;
   }
 `;
-// export const SongsIcon = styled(BsMusicNote)`
-//   position: relative;
-//   top: 5px;
-//   color: #fa233b;
-//   width: 40px;
-//   font-size: 19px;
-// `;
-
-// .Menu-nav {
-//     display: flex;
-//     flex-direction: column;
-//     width: 260px;
-//     height: 75vh;
-//     background: #f9f9f9;
-// }
-// .apple-logo {
-//     margin-top: 18px;
-//     margin-bottom: 17px;
-//     padding-left:25px;
-//     padding-right: 25px;
-//     color: #252525;
-//     font-size: 13px;
-//     font-family: -apple-system, BlinkMacSystemFont;
-//     font-style: normal;
-//     font-weight: bold;
-//     height: 45px;
-// }
-
-// input {
-//     position: relative;
-//     top: 25px;
-//     width: 100%;
-//     height: 32px;
-//     padding: 15px 118px;
-//     background: #fff;
-//     border: 1px solid #dcdcdc;
-//     border-radius: 3px;
-// }

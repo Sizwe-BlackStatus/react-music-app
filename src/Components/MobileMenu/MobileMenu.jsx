@@ -10,40 +10,33 @@ import {
 import {
   SongsIcon,
   SideNavIconHeading,
-  MicrophoneIcon,
-  AlbumIcon,
   PlaylistIcon,
+  InpuContainer,
+  SearchBox,
+  Icon,
+  Input,
 } from "../NavMenu.js";
-function MobileMenu({ open, toggle }) {
+
+import SearchPlaylist from "../SearchPlaylist.jsx";
+
+function MobileMenu({ open, toggle, search,handlePlaylist, searchPlaylist, playlistToggle, playlistOpen }) {
   return (
-    <MobileMenuContainer className="MobileMenu" open={open} onClick={toggle}>
+    <MobileMenuContainer className="MobileMenu" open={open} >
       <MobileLibraryHeader className="libraryheader">
         <MobileHeaderText className="headertext">Menu</MobileHeaderText>
       </MobileLibraryHeader>
-      <MobileNavLinks className="nav-links">
+      <MobileNavLinks className="nav-links" onClick={toggle}>
         <MobileNavItem className="nav-item">
           <Link to="/songs">
             <SongsIcon className="listen-now-icon" />
             <SideNavIconHeading>Songs</SideNavIconHeading>
           </Link>
         </MobileNavItem>
-        <MobileNavItem>
-          <Link to="/artists">
-            <MicrophoneIcon className="listen-now-icon" />
-            <SideNavIconHeading>Artist</SideNavIconHeading>
-          </Link>
-        </MobileNavItem>
-        <MobileNavItem>
-          <Link to="/albums">
-            <AlbumIcon className="Album-icon" />
-            <SideNavIconHeading>Albums</SideNavIconHeading>
-          </Link>
-        </MobileNavItem>
       </MobileNavLinks>
       <MobileLibraryHeader className="MobileLibraryHeader">
         <MobileHeaderText className="headertext">My Playlist</MobileHeaderText>
       </MobileLibraryHeader>
-      <MobileNavLinks className="nav-links">
+      <MobileNavLinks className="nav-links" onClick={toggle}>
         <MobileNavItem className="nav-item">
           <Link to="/Hip-Hop">
             <PlaylistIcon className="listen-now-icon" />
@@ -69,6 +62,18 @@ function MobileMenu({ open, toggle }) {
           </Link>
         </MobileNavItem>
       </MobileNavLinks>
+      {/* <InpuContainer className="inputContainer">
+        <SearchBox className="searchbox">
+          <Icon />
+          <Input placeholder={"Search"} onChange={(e) => search(e.target.value)}/>
+        </SearchBox>
+      </InpuContainer>
+      {searchPlaylist.length !== 0 ? <SearchPlaylist
+          searchPlaylist={searchPlaylist}
+          handlePlaylist={handlePlaylist}
+          playlistToggle={playlistToggle}
+          playlistOpen={playlistOpen}
+        /> : null} */}
     </MobileMenuContainer>
   );
 }
