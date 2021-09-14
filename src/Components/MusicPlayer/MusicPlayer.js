@@ -10,8 +10,6 @@ import { GiSpeaker, GiSpeakerOff } from "react-icons/gi";
 
 export const SongScreenContainer = styled.div`
   display: flex;
-  position: relative;
-  top: 0;
   width: 100%;
   height: 54px;
   background: #000000;
