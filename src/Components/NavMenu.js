@@ -10,13 +10,12 @@ import { MdPlaylistPlay } from "react-icons/md";
 export const MenuNav = styled.nav`
   display: flex;
   flex-direction: column;
-  flex: 0.1;
   background: rgb(15 17 28);
   height: 100vh;
   z-index: 10;
-  @media screen and (max-width: 768px) {
-    width: 35%;
-  }
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 256px;
   @media screen and (max-width: 560px) {
     display: none;
   }
@@ -27,12 +26,12 @@ export const InpuContainer = styled.div`
   flex-direction: column;
   margin-left: 24px;
   margin-top: 20px;
-  width: 78%;
-  line-height: 28px;
+  width: 77%;
+  line-height: 22px;
   border: 1px solid #e5e5e5;
   border-radius: 2px;
   background: #fff;
-  @media screen and (max-width: 560px){
+  @media screen and (max-width: 560px) {
     position: absolute;
     bottom: 100px;
     margin-left: 36px;
@@ -41,12 +40,14 @@ export const InpuContainer = styled.div`
 
 export const SearchBox = styled.div`
   width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
 `;
 export const Input = styled.input`
   border: none;
   outline: none;
   position: relative;
-  top: -2px;
   width: 81%;
   opacity: 0.5;
 `;
@@ -54,10 +55,9 @@ export const Input = styled.input`
 export const LibrarySection = styled.div`
   overflow-x: hidden;
   overflow-y: auto;
-`
+`;
 export const Icon = styled(AiOutlineSearch)`
   position: relative;
-  top: 1px;
   margin-left: 6px;
   margin-right: 6px;
   opacity: 0.7;
@@ -115,7 +115,6 @@ export const NavItem = styled.li`
     border-radius: 3px;
     border: 1px solid #2c2c2c;
     width: 100%;
-    
   }
 `;
 

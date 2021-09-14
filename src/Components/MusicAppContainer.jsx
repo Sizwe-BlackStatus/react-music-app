@@ -29,7 +29,7 @@ function MusicAppContainer() {
   }
 
   function handlePlaylist() {
-    if (typeOfPlaylist !== "songs") {
+    if (typeOfPlaylist !== "songs" && "") {
       setPlayliss(playlist);
     } else {
       setPlayliss(musicDb);
