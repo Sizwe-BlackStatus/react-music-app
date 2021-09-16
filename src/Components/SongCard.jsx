@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { setCurrentPlaying } from "./actions/actions";
 import { SongContainer, SongImg, SongName, SongCard } from "./SongCard";
 
-function SongC({ music, handlePlaylist }) {
+function SongC({ music, handlePlaylist, searchPlaylistReset }) {
   const dispatch = useDispatch();
   function handlePlay() {
     dispatch(setCurrentPlaying(music));
@@ -11,7 +11,13 @@ function SongC({ music, handlePlaylist }) {
 
   return (
     <SongContainer>
-      <SongCard onClick={() => {handlePlaylist(); handlePlay();}}>
+      <SongCard
+        onClick={() => {
+          handlePlaylist();
+          handlePlay();
+          searchPlaylistReset();
+        }}
+      >
         <SongImg src={music.image} />
         <SongName>{music.title}</SongName>
         <SongName>{music.artist}</SongName>

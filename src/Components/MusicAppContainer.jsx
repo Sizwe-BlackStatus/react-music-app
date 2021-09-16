@@ -34,6 +34,16 @@ function MusicAppContainer() {
     } else {
       setPlayliss(musicDb);
     }
+    if (searchPlaylist.length !== 0) {
+      setPlayliss(searchPlaylist);
+    }
+    playliss.map((song, id) => {
+      return (song.id = id);
+    });
+  }
+
+  function searchPlaylistReset() {
+    setSearchPlaylist([]);
   }
 
   useEffect(() => playliss, [playliss]);
@@ -92,7 +102,11 @@ function MusicAppContainer() {
             path={["/", "/songs"]}
             exact
             component={() => (
-              <SongsList music={currMusic} handlePlaylist={handlePlaylist} />
+              <SongsList
+                music={currMusic}
+                handlePlaylist={handlePlaylist}
+                searchPlaylistReset={searchPlaylistReset}
+              />
             )}
           ></Route>
           <Route
@@ -102,6 +116,7 @@ function MusicAppContainer() {
               <GenrePlaylist
                 music={currMusic}
                 handlePlaylist={handlePlaylist}
+                searchPlaylistReset={searchPlaylistReset}
               />
             )}
           ></Route>
@@ -112,6 +127,7 @@ function MusicAppContainer() {
               <GenrePlaylist
                 music={currMusic}
                 handlePlaylist={handlePlaylist}
+                searchPlaylistReset={searchPlaylistReset}
               />
             )}
           ></Route>
@@ -122,6 +138,7 @@ function MusicAppContainer() {
               <GenrePlaylist
                 music={currMusic}
                 handlePlaylist={handlePlaylist}
+                searchPlaylistReset={searchPlaylistReset}
               />
             )}
           ></Route>
@@ -132,6 +149,7 @@ function MusicAppContainer() {
               <GenrePlaylist
                 music={currMusic}
                 handlePlaylist={handlePlaylist}
+                searchPlaylistReset={searchPlaylistReset}
               />
             )}
           ></Route>

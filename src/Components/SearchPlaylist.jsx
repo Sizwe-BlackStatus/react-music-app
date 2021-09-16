@@ -11,17 +11,22 @@ function SearchPlaylist({ handlePlaylist, searchPlaylist, playlistOpen }) {
   }
 
   return (
-      <SearchPlaylistContainer playlistOpen={playlistOpen}>
-        {searchPlaylist.map((song, id) => {
-          song.id = id;
-          return (
-            <ImgContainer onClick={() => {handlePlaylist(); handlePlay(song);}}>
-              <Img src={song.image} />
-              <SongName>{song.title}</SongName>
-            </ImgContainer>
-          );
-        })}
-      </SearchPlaylistContainer>
+    <SearchPlaylistContainer playlistOpen={playlistOpen}>
+      {searchPlaylist.map((song, id) => {
+        return (
+          <ImgContainer
+            key={id}
+            onClick={() => {
+              handlePlaylist();
+              handlePlay(song);
+            }}
+          >
+            <Img src={song.image} />
+            <SongName>{song.title}</SongName>
+          </ImgContainer>
+        );
+      })}
+    </SearchPlaylistContainer>
   );
 }
 
