@@ -34,7 +34,7 @@ function MusicAppContainer() {
   }
 
   function handlePlaylist() {
-    if (typeOfPlaylist !== "songs" || "") {
+    if (typeOfPlaylist !== "songs" && typeOfPlaylist !== "") {
       setPlayliss(playlist);
     } else {
       setPlayliss(musicDb);
