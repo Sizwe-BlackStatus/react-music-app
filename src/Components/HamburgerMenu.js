@@ -42,7 +42,4 @@ export const SongName = styled.div`
   color: #f9f9f9;
   position: relative;
   left: 11px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 `;
