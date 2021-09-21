@@ -7,9 +7,9 @@ import {
   SongName,
 } from "./HamburgerMenu";
 
-function HamburgerMenu({ toggle, music }) {
+function HamburgerMenu({ mobileMenuOpenToggle, music }) {
   return (
-    <HamburgerMenuContainer className="hamburgerMenuContainer" onClick={toggle}>
+    <HamburgerMenuContainer className="hamburgerMenuContainer" onClick={mobileMenuOpenToggle}>
       <ImgContainer>
         <Img src={music.image} />
         <SongName>{music.title}</SongName>

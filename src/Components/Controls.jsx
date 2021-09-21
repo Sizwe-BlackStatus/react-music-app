@@ -14,10 +14,6 @@ import {
   ShuffleRepeatBox,
   LcdToggle,
 } from "./Controls";
-import {
-  PlaylistToggleBox,
-  PlaylistToggle,
-} from "./MusicPlayer/MusicPlayer.js";
 import SearchPlaylistButton from "./SearchPlaylistButton.jsx";
 import ToggleComponent from "./Toggle.jsx";
 

@@ -13,6 +13,7 @@ import GenrePlaylist from "./GenrePlaylist.jsx";
 function MusicAppContainer() {
   const [open, setOpen] = useState(false);
   const [playlistOpen, setPlaylistOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(true);
   const [currMusic, setCurrMusic] = useState("");
   const { playing } = useSelector((state) => state.musicReducer);
   const [playliss, setPlayliss] = useState([]);
@@ -26,6 +27,10 @@ function MusicAppContainer() {
 
   function playlistToggle() {
     setPlaylistOpen(!playlistOpen);
+  }
+
+  function mobileMenuOpenToggle() {
+    setMobileMenuOpen(!mobileMenuOpen);
   }
 
   function handlePlaylist() {
@@ -67,8 +72,8 @@ function MusicAppContainer() {
   return (
     <Router>
       <MobileMenu
-        open={open}
-        toggle={toggle}
+        mobileMenuOpen={mobileMenuOpen}
+        mobileMenuOpenToggle={mobileMenuOpenToggle}
         search={search}
         handlePlaylist={handlePlaylist}
         searchPlaylist={searchPlaylist}
@@ -76,7 +81,7 @@ function MusicAppContainer() {
         playlistToggle={playlistToggle}
         playlistOpen={playlistOpen}
       />
-      <HamburgerMenu toggle={toggle} music={currMusic} />
+      <HamburgerMenu mobileMenuOpenToggle={mobileMenuOpenToggle} mobileMenuOpen={mobileMenuOpen} music={currMusic} />
       <MusicContainer>
         <NavMenu
           music={currMusic}
@@ -88,6 +93,8 @@ function MusicAppContainer() {
           playlistToggle={playlistToggle}
           playlistOpen={playlistOpen}
           playliss={playliss}
+          mobileMenuOpenToggle={mobileMenuOpenToggle}
+          mobileMenuOpen={mobileMenuOpen}
         />
         <MusicPlayer
           toggle={toggle}

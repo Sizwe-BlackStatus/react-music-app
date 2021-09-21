@@ -19,7 +19,7 @@ import LogoComponent from "./LogoContainer.jsx";
 import SongScreen from "./SongScreen.jsx";
 import SearchPlaylist from "./SearchPlaylist.jsx";
 
-function NavMenu({ music, open, toggle, handlePlaylist, search, searchPlaylist, playlistToggle, playlistOpen}) {
+function NavMenu({ music, open, toggle, handlePlaylist, search, searchPlaylist, playlistToggle, playlistOpen }) {
   return (
     <MenuNav className="MenuNav">
       <LogoComponent onClick={handlePlaylist} />

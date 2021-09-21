@@ -9,7 +9,7 @@ export const MobileMenuContainer = styled.div`
     width: 100%;
     height: 100vh;
     background: rgb(15 17 28);
-    top: ${({ open }) => (open ? "54px" : "-110%")};
+    top: ${({ mobileMenuOpen }) => (mobileMenuOpen ? "54px" : "-110%")};
     overflow-y: auto;
   }
 `;

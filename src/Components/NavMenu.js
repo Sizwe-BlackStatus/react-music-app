@@ -32,9 +32,9 @@ export const InpuContainer = styled.div`
   border-radius: 2px;
   background: #fff;
   @media screen and (max-width: 560px) {
-    position: absolute;
-    bottom: 100px;
-    margin-left: 36px;
+    position: relative;
+    width: 85%;
+    margin-left: 30px;
   }
 `;
 

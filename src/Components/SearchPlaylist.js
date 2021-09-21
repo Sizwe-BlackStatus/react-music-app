@@ -15,9 +15,23 @@ export const SearchPlaylistContainer = styled.div`
   overflow-y: auto;
 
   @media screen and (max-width: 560px) {
-    left: 0;
-    top: 30%;
-    width: 100%;
+    left: 15%;
+    top: 50%;
+    width: 74%;
     height: 50vh;
+    z-index: 100;
+  }
+  @media screen and (max-width: 400px) {
+    left: 7%;
   }
 `;
+
+export const CancelSearchPlaylistBox = styled.div`
+  display: none;
+  @media screen and (max-width: 560px){
+    display: block;
+    position: relative;
+    left: 93%;
+  }
+`;
+

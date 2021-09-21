@@ -4,14 +4,23 @@ import { ImgContainer, Img, SongName } from "./HamburgerMenu.js";
 import { useDispatch } from "react-redux";
 import { setCurrentPlaying } from "./actions/actions";
 
-function SearchPlaylist({ handlePlaylist, searchPlaylist, playlistOpen }) {
+function SearchPlaylist({
+  handlePlaylist,
+  searchPlaylist,
+  playlistOpen,
+  mobileMenuOpenToggle,
+  mobileMenuOpen,
+}) {
   const dispatch = useDispatch();
   function handlePlay(song) {
     dispatch(setCurrentPlaying(song));
   }
 
   return (
-    <SearchPlaylistContainer playlistOpen={playlistOpen}>
+    <SearchPlaylistContainer
+      playlistOpen={playlistOpen}
+      mobileMenuOpen={mobileMenuOpen}
+    >
       {searchPlaylist.map((song, id) => {
         return (
           <ImgContainer
@@ -19,6 +28,7 @@ function SearchPlaylist({ handlePlaylist, searchPlaylist, playlistOpen }) {
             onClick={() => {
               handlePlaylist();
               handlePlay(song);
+              mobileMenuOpenToggle();
             }}
           >
             <Img src={song.image} />
