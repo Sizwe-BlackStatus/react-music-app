@@ -19,7 +19,7 @@ export const SongScreenContainer = styled.div`
     position: absolute;
     bottom: ${({ music }) => (typeof music === "object" ? "0px" : "-180px")};
     width: 100%;
-    z-index: 10;
+    z-index: 999;
   }
 `;
 export const ControlsContainer = styled.div`

@@ -28,7 +28,6 @@ function SearchPlaylist({
             onClick={() => {
               handlePlaylist();
               handlePlay(song);
-              mobileMenuOpenToggle();
             }}
           >
             <Img src={song.image} />
